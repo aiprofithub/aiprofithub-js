@@ -1,5 +1,5 @@
 name: Early user use case
-about: Share how you want to track AI usage and cost with AIProfitHub
+description: Share how you want to track AI usage and cost with AIProfitHub
 labels: early-user, sales-signal
 body:
   - type: markdown
