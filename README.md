@@ -78,6 +78,7 @@ Start here if you want to test the SDK before connecting a full app:
 - `examples/langchain-wrapper.md` — guide for adding usage tracking around LangChain workflows
 - `examples/provider-router-decision-guide.md` — guide for choosing provider/model routes by cost, risk, and margin
 - `examples/budget-alert-policy-template.md` — policy template for AI budget thresholds, anomaly alerts, and route guardrails
+- `examples/customer-margin-risk-template.md` — template for checking AI cost per customer against revenue
 - `examples/framework-integrations.md` — Next.js and Express app route integration guide
 - `examples/nextjs-route-handler.ts` — copyable Next.js route handler example
 - `examples/express-route.ts` — copyable Express route example
@@ -113,6 +114,7 @@ Start here if you want to test the SDK before connecting a full app:
 | Track LangChain workflows | Yes | Use `examples/langchain-wrapper.md`. |
 | Choose model/provider routes | Yes | Use `examples/provider-router-decision-guide.md`. |
 | Define AI budget alert policy | Yes | Use `examples/budget-alert-policy-template.md`. |
+| Check customer margin risk | Yes | Use `examples/customer-margin-risk-template.md`. |
 | Copy tracking into a Next.js or Express route | Yes | Use `examples/framework-integrations.md`. |
 | Test API ingest without the SDK | Yes | Use `examples/rest-cookbook.md`. |
 | Add a PR reminder for AI cost risk | Yes | Use `examples/github-action-ai-cost-check.md`. |
