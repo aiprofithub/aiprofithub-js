@@ -1,0 +1,44 @@
+title: "Early user use case"
+labels:
+  - early-user
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this discussion if you are trying AIProfitHub SDK and want help deciding what to track.
+  - type: textarea
+    id: what_are_you_building
+    attributes:
+      label: What are you building?
+      description: Example: AI SaaS, support bot, document workflow, internal agent, chatbot agency, developer tool.
+    validations:
+      required: true
+  - type: textarea
+    id: providers_or_frameworks
+    attributes:
+      label: Which providers or frameworks are you using?
+      description: Example: OpenAI, Anthropic, Google, Groq, Mistral, LangChain, Vercel AI SDK, custom wrapper.
+    validations:
+      required: true
+  - type: textarea
+    id: attribution
+    attributes:
+      label: What cost attribution do you need?
+      description: Example: customerId, userId, teamId, feature, route, provider, model, plan, fallbackReason.
+    validations:
+      required: true
+  - type: textarea
+    id: pain
+    attributes:
+      label: What is painful today?
+      description: Example: surprise bill, no per-customer margin, no feature-level cost, output tokens growing, expensive fallback route.
+    validations:
+      required: false
+  - type: checkboxes
+    id: audit_interest
+    attributes:
+      label: Do you want help with an AI Spend Audit?
+      options:
+        - label: Yes, I may want an audit
+        - label: Not yet, just testing the SDK
+        - label: I want dashboard / alerts / optimizer later
