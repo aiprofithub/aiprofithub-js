@@ -1,5 +1,5 @@
 name: Tracking field request
-about: Request a provider, framework, or attribution field example
+description: Request a provider, framework, or attribution field example
 labels: customer-request
 body:
   - type: markdown
