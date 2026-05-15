@@ -41,7 +41,9 @@ Use this SDK to send usage events from your app into AIProfitHub Cloud:
 
 ## Install
 
+```bash
 npm install @aiprofithub/sdk
+```
 
 ## Quick start
 
@@ -65,30 +67,58 @@ Example event:
 - feature: support-chat
 - costUsd: 0.0042
 
-## Free examples
+## Start here
 
-Start here if you want to test the SDK before connecting a full app:
+| Goal | Start with |
+| --- | --- |
+| Send one SDK event | `examples/basic-usage.ts` |
+| Test API ingest without SDK install | `examples/rest-cookbook.md` |
+| Copy tracking into an app route | `examples/framework-integrations.md` |
+| Wrap existing OpenAI calls | `examples/openai-wrapper.md` |
+| Wrap Anthropic Claude calls | `examples/anthropic-wrapper.md` |
+| Track LangChain workflows | `examples/langchain-wrapper.md` |
 
-- `examples/basic-usage.ts` — smallest working usage tracking example
-- `examples/openai-wrapper.ts` — wrapper for tracking OpenAI chat completions
-- `examples/openai-wrapper.md` — guide for adding usage tracking around OpenAI calls
-- `examples/anthropic-wrapper.ts` — wrapper for tracking Anthropic Claude messages
-- `examples/anthropic-wrapper.md` — guide for adding usage tracking around Claude calls
-- `examples/langchain-wrapper.ts` — wrapper for tracking LangChain-style runs and chains
-- `examples/langchain-wrapper.md` — guide for adding usage tracking around LangChain workflows
-- `examples/provider-router-decision-guide.md` — guide for choosing provider/model routes by cost, risk, and margin
-- `examples/budget-alert-policy-template.md` — policy template for AI budget thresholds, anomaly alerts, and route guardrails
-- `examples/customer-margin-risk-template.md` — template for checking AI cost per customer against revenue
-- `examples/framework-integrations.md` — Next.js and Express app route integration guide
-- `examples/nextjs-route-handler.ts` — copyable Next.js route handler example
-- `examples/express-route.ts` — copyable Express route example
-- `examples/rest-cookbook.md` — REST and cURL examples for non-JavaScript teams
-- `examples/github-action-ai-cost-check.md` — CI reminder for AI cost risk in pull requests
-- `examples/cost-calculator.html` — browser-based AI spend and margin risk calculator
-- `examples/cost-calculator.md` — guide for turning estimated spend into an audit decision
-- `examples/sample-ai-spend-audit-report.md` — sample report showing what paid audits deliver
-- `examples/agent-playbooks.md` — sample outputs from the 9 AIProfitHub product agents
-- `examples/README.md` — decision path from free tracking to paid AIProfitHub Cloud
+## Free assets by use case
+
+### 1. Integrate usage tracking
+
+| Asset | Use it when |
+| --- | --- |
+| `examples/basic-usage.ts` | You want the smallest working SDK example. |
+| `examples/rest-cookbook.md` | You want REST and cURL examples for non-JavaScript teams. |
+| `examples/framework-integrations.md` | You want a Next.js and Express route integration guide. |
+| `examples/nextjs-route-handler.ts` | You use Next.js App Router route handlers. |
+| `examples/express-route.ts` | You use Express or an Express-style Node API. |
+| `examples/openai-wrapper.ts` | You already use OpenAI chat completions. |
+| `examples/openai-wrapper.md` | You want the guide for wrapping OpenAI calls. |
+| `examples/anthropic-wrapper.ts` | You already use Anthropic Claude messages. |
+| `examples/anthropic-wrapper.md` | You want the guide for wrapping Claude calls. |
+| `examples/langchain-wrapper.ts` | You use LangChain-style chains or runnables. |
+| `examples/langchain-wrapper.md` | You want the guide for tracking LangChain workflows. |
+
+### 2. Estimate AI spend and margin risk
+
+| Asset | Use it when |
+| --- | --- |
+| `examples/cost-calculator.html` | You want a browser-based AI spend and margin risk calculator. |
+| `examples/cost-calculator.md` | You want the decision guide for using the calculator. |
+| `examples/customer-margin-risk-template.md` | You want to compare AI cost per customer against customer revenue. |
+
+### 3. Control budgets, alerts, and routing
+
+| Asset | Use it when |
+| --- | --- |
+| `examples/provider-router-decision-guide.md` | You want to choose provider/model routes by cost, risk, and margin. |
+| `examples/budget-alert-policy-template.md` | You want budget thresholds, anomaly alerts, and route guardrails. |
+| `examples/github-action-ai-cost-check.md` | You want a CI reminder when pull requests add AI cost risk. |
+
+### 4. Evaluate AIProfitHub before buying
+
+| Asset | Use it when |
+| --- | --- |
+| `examples/sample-ai-spend-audit-report.md` | You want to see what a paid AI Spend Audit can return. |
+| `examples/agent-playbooks.md` | You want sample outputs from the 9 AIProfitHub product agents. |
+| `examples/README.md` | You want the full decision path from free tracking to paid Cloud. |
 
 ## Required fields
 
