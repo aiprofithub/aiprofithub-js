@@ -70,6 +70,8 @@ Example event:
 Start here if you want to test the SDK before connecting a full app:
 
 - `examples/basic-usage.ts` — smallest working usage tracking example
+- `examples/cost-calculator.html` — browser-based AI spend and margin risk calculator
+- `examples/cost-calculator.md` — guide for turning estimated spend into an audit decision
 - `examples/README.md` — decision path from free tracking to paid AIProfitHub Cloud
 
 ## Required fields
@@ -91,6 +93,7 @@ Start here if you want to test the SDK before connecting a full app:
 | You need to... | Use this SDK? | Next action |
 | --- | --- | --- |
 | Track AI calls from a JavaScript app | Yes | Install the SDK and send track events. |
+| Estimate monthly AI spend before connecting data | Yes | Open `examples/cost-calculator.html`. |
 | Find which customer or feature burns the most AI budget | Yes | Send customerId and feature with each event. |
 | Get a one-time cost leak report | Yes | Start with an AI Spend Audit. |
 | Replace your generic log stack | No | Use AIProfitHub for AI cost intelligence, not generic logs. |
