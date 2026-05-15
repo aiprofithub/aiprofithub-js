@@ -7,6 +7,8 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 | Example | Use it when |
 | --- | --- |
 | `basic-usage.ts` | You want the smallest possible event tracking example. |
+| `openai-wrapper.ts` | You already use OpenAI chat completions and want automatic usage tracking. |
+| `openai-wrapper.md` | You want the guide for wrapping OpenAI calls with AIProfitHub tracking. |
 | `framework-integrations.md` | You want to copy tracking into Next.js or Express routes. |
 | `nextjs-route-handler.ts` | You use Next.js App Router route handlers. |
 | `express-route.ts` | You use Express or an Express-style Node API. |
@@ -20,7 +22,7 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 ## Decision path
 
 1. Install the SDK or test the REST API with cURL.
-2. Copy the Next.js or Express route example into your app.
+2. Wrap existing OpenAI calls or copy the Next.js/Express route example into your app.
 3. Send one usage event.
 4. Add the GitHub Action cost check to catch future AI usage changes.
 5. Estimate spend with the calculator.
