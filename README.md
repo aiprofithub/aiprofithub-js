@@ -1,6 +1,41 @@
 # AIProfitHub JavaScript SDK
 
-Public SDK starter for sending AI usage events into AIProfitHub Cloud.
+Track AI model usage, token volume, customer attribution, feature attribution, and cost signals from JavaScript or TypeScript apps.
+
+<p align="center">
+  <strong>AI cost visibility for apps using OpenAI, Anthropic, Google, Mistral, Groq, LangChain, and custom LLM flows.</strong>
+</p>
+
+<p align="center">
+  <a href="https://aiprofithub.ai/get-audit"><strong>Get an AI Spend Audit</strong></a>
+  ·
+  <a href="https://app.aiprofithub.ai/onboarding"><strong>Create an account</strong></a>
+  ·
+  <a href="https://docs.aiprofithub.ai"><strong>Read the docs</strong></a>
+</p>
+
+## Visual flow
+
+```mermaid
+flowchart LR
+  A[Your app] --> B[AIProfitHub SDK]
+  B --> C[Usage ingest]
+  C --> D[AIProfitHub Cloud]
+  D --> E[Cost dashboard]
+  D --> F[Budget alerts]
+  D --> G[Audit report]
+  D --> H[Optimization recommendations]
+## What this SDK does
+
+AIProfitHub helps teams see where AI spend is going before the bill becomes a surprise.
+
+Use this SDK to send usage events from your app into AIProfitHub Cloud:
+
+- model used
+- input and output token counts
+- user, customer, and feature attribution
+- provider and cost metadata
+- usage data for dashboards, alerts, audits, and optimization
 
 ## Install
 
@@ -8,7 +43,7 @@ npm install @aiprofithub/sdk
 
 ## Quick start
 
-Create an AIProfitHub API key, then send usage events with provider, model, token counts, user, customer, and feature metadata.
+Import `createClient` from `@aiprofithub/sdk`, then send usage events with provider, model, token counts, user, customer, and feature metadata.
 
 Required fields:
 
@@ -26,15 +61,55 @@ Example event:
 - userId: user_123
 - customerId: customer_456
 - feature: support-chat
+- costUsd: 0.0042
+
+## Required fields
+
+| Field | Required | Why it matters |
+| --- | --- | --- |
+| provider | Yes | Groups spend by AI provider. |
+| model | Yes | Shows which models create cost. |
+| inputTokens | Yes | Measures prompt volume. |
+| outputTokens | Yes | Measures generated output volume. |
+| userId | No | Attributes usage to an app user. |
+| customerId | No | Attributes usage to a paying customer. |
+| feature | No | Shows which product feature drives spend. |
+| costUsd | No | Lets you pass known cost estimates. |
+| metadata | No | Adds extra trace context for audits. |
+
+## Decision guide
+
+| You need to... | Use this SDK? | Next action |
+| --- | --- | --- |
+| Track AI calls from a JavaScript app | Yes | Install the SDK and send track events. |
+| Find which customer or feature burns the most AI budget | Yes | Send customerId and feature with each event. |
+| Get a one-time cost leak report | Yes | Start with an AI Spend Audit. |
+| Replace your generic log stack | No | Use AIProfitHub for AI cost intelligence, not generic logs. |
+| Open source your private SaaS backend | No | Keep backend, billing, and dashboard code private. |
+
+## When users should buy AIProfitHub Cloud
+
+The SDK is free. The paid value is the control plane around the data.
+
+Buy AIProfitHub when you need to:
+
+- stop surprise AI bills
+- attribute AI cost by customer or feature
+- detect abnormal model usage
+- prepare finance-ready AI spend reports
+- reduce AI cost without guessing
+- protect product margin as usage grows
+
+## Safety notes
+
+Do not commit credentials, environment files, backend source, billing logic, or private dashboard code into public repositories.
 
 ## Commercial path
 
-The SDK is free. AIProfitHub Cloud is the paid product.
+- Get an AI Spend Audit: https://aiprofithub.ai/get-audit
+- Create an account: https://app.aiprofithub.ai/onboarding
+- Read docs: https://docs.aiprofithub.ai
 
-- AI Spend Audit: https://aiprofithub.ai/get-audit
-- App dashboard: https://app.aiprofithub.ai/onboarding
-- Docs: https://docs.aiprofithub.ai
+## License
 
-## Do not publish
-
-Do not publish backend source, billing logic, private dashboards, production env files, or secrets.
+MIT
