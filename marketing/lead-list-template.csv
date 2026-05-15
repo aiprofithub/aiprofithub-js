@@ -1,0 +1,3 @@
+company,website,contact_name,role,channel,fit_reason,pain_signal,ai_provider_or_stack,outreach_status,next_step,notes
+Example AI SaaS,https://example.com,Founder Name,Founder,LinkedIn,Uses AI feature in SaaS,Unknown AI cost by customer,OpenAI,Not contacted,Send cold DM,Replace sample row with real lead
+Example Chatbot Agency,https://example-agency.com,CTO Name,CTO,Email,Manages multiple chatbot clients,Needs cost per client,Anthropic/OpenAI,Not contacted,Ask cost attribution question,Replace sample row with real lead
