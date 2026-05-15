@@ -169,6 +169,22 @@ Buy AIProfitHub when you need to:
 - reduce AI cost without guessing
 - protect product margin as usage grows
 
+## Community feedback
+
+Building an AI SaaS, agent, chatbot, internal copilot, or LangChain app?
+
+Open an **AI Spend Audit Request** issue if you want practical feedback on how to track AI cost by provider, model, user, customer, feature, and margin risk.
+
+Good questions to ask:
+
+- How should I tag AI requests so finance can understand the bill?
+- How do I know which customer or feature is burning margin?
+- Should I track cost in the app, gateway, queue worker, or provider wrapper?
+- What budget alerts should I add before usage scales?
+- Which model/provider routing rules should I test first?
+
+Start here: https://github.com/aiprofithub/aiprofithub-js/issues/new?template=ai-spend-audit-request.md
+
 ## Safety notes
 
 Do not commit credentials, environment files, backend source, billing logic, or private dashboard code into public repositories.
