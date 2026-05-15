@@ -1,0 +1,72 @@
+name: Early user use case
+about: Share how you want to track AI usage and cost with AIProfitHub
+labels: early-user, sales-signal
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying AIProfitHub SDK. Use this template if you are building an AI product and want help deciding what to track.
+  - type: input
+    id: company_or_project
+    attributes:
+      label: Company or project
+      description: Public name is enough. Do not share private customer data.
+      placeholder: Example AI SaaS, chatbot agency, internal AI tool
+    validations:
+      required: false
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Stage
+      options:
+        - Prototype
+        - Production
+        - Scaling usage
+        - Cost problem already visible
+    validations:
+      required: true
+  - type: checkboxes
+    id: providers
+    attributes:
+      label: Providers used
+      options:
+        - label: OpenAI
+        - label: Anthropic
+        - label: Google
+        - label: Groq
+        - label: Mistral
+        - label: LangChain
+        - label: Custom / other
+  - type: textarea
+    id: use_case
+    attributes:
+      label: AI use case
+      description: What AI feature are you shipping?
+      placeholder: Support chatbot, summarization, document extraction, agent workflow, code assistant...
+    validations:
+      required: true
+  - type: textarea
+    id: attribution
+    attributes:
+      label: What do you need to attribute cost by?
+      description: Pick the fields that matter for your business.
+      placeholder: customerId, userId, teamId, organizationId, feature, route, provider, model, plan...
+    validations:
+      required: true
+  - type: textarea
+    id: pain
+    attributes:
+      label: Current cost pain
+      description: What is unclear, expensive, or risky today?
+      placeholder: We do not know which customer burns tokens, output tokens are rising, fallback model is too expensive...
+    validations:
+      required: false
+  - type: checkboxes
+    id: commercial_next_step
+    attributes:
+      label: Commercial next step
+      options:
+        - label: I may want an AI Spend Audit
+        - label: I may want a dashboard
+        - label: I may want alerts
+        - label: I may want optimizer / routing recommendations
