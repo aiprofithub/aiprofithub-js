@@ -8,6 +8,7 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 | --- | --- |
 | `basic-usage.ts` | You want the smallest possible event tracking example. |
 | `rest-cookbook.md` | You want to test the usage API with REST or cURL before installing an SDK. |
+| `github-action-ai-cost-check.md` | You want a CI reminder when pull requests add AI cost risk. |
 | `cost-calculator.html` | You want to estimate monthly AI cost and margin risk before connecting data. |
 | `cost-calculator.md` | You want the decision guide for using the calculator. |
 | `sample-ai-spend-audit-report.md` | You want to see what a paid AI Spend Audit can return. |
@@ -17,11 +18,12 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 
 1. Install the SDK or test the REST API with cURL.
 2. Send one usage event.
-3. Estimate spend with the calculator.
-4. Read the sample audit report.
-5. Review the agent playbooks.
-6. Add `customerId` and `feature` to identify cost drivers.
-7. Use the dashboard, audit, alerts, agents, and optimization workflow to reduce spend.
+3. Add the GitHub Action cost check to catch future AI usage changes.
+4. Estimate spend with the calculator.
+5. Read the sample audit report.
+6. Review the agent playbooks.
+7. Add `customerId` and `feature` to identify cost drivers.
+8. Use the dashboard, audit, alerts, agents, and optimization workflow to reduce spend.
 
 ## What to send
 
