@@ -7,6 +7,9 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 | Example | Use it when |
 | --- | --- |
 | `basic-usage.ts` | You want the smallest possible event tracking example. |
+| `framework-integrations.md` | You want to copy tracking into Next.js or Express routes. |
+| `nextjs-route-handler.ts` | You use Next.js App Router route handlers. |
+| `express-route.ts` | You use Express or an Express-style Node API. |
 | `rest-cookbook.md` | You want to test the usage API with REST or cURL before installing an SDK. |
 | `github-action-ai-cost-check.md` | You want a CI reminder when pull requests add AI cost risk. |
 | `cost-calculator.html` | You want to estimate monthly AI cost and margin risk before connecting data. |
@@ -17,13 +20,14 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 ## Decision path
 
 1. Install the SDK or test the REST API with cURL.
-2. Send one usage event.
-3. Add the GitHub Action cost check to catch future AI usage changes.
-4. Estimate spend with the calculator.
-5. Read the sample audit report.
-6. Review the agent playbooks.
-7. Add `customerId` and `feature` to identify cost drivers.
-8. Use the dashboard, audit, alerts, agents, and optimization workflow to reduce spend.
+2. Copy the Next.js or Express route example into your app.
+3. Send one usage event.
+4. Add the GitHub Action cost check to catch future AI usage changes.
+5. Estimate spend with the calculator.
+6. Read the sample audit report.
+7. Review the agent playbooks.
+8. Add `customerId` and `feature` to identify cost drivers.
+9. Use the dashboard, audit, alerts, agents, and optimization workflow to reduce spend.
 
 ## What to send
 

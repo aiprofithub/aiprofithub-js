@@ -70,6 +70,9 @@ Example event:
 Start here if you want to test the SDK before connecting a full app:
 
 - `examples/basic-usage.ts` — smallest working usage tracking example
+- `examples/framework-integrations.md` — Next.js and Express app route integration guide
+- `examples/nextjs-route-handler.ts` — copyable Next.js route handler example
+- `examples/express-route.ts` — copyable Express route example
 - `examples/rest-cookbook.md` — REST and cURL examples for non-JavaScript teams
 - `examples/github-action-ai-cost-check.md` — CI reminder for AI cost risk in pull requests
 - `examples/cost-calculator.html` — browser-based AI spend and margin risk calculator
@@ -97,6 +100,7 @@ Start here if you want to test the SDK before connecting a full app:
 | You need to... | Use this SDK? | Next action |
 | --- | --- | --- |
 | Track AI calls from a JavaScript app | Yes | Install the SDK and send track events. |
+| Copy tracking into a Next.js or Express route | Yes | Use `examples/framework-integrations.md`. |
 | Test API ingest without the SDK | Yes | Use `examples/rest-cookbook.md`. |
 | Add a PR reminder for AI cost risk | Yes | Use `examples/github-action-ai-cost-check.md`. |
 | Estimate monthly AI spend before connecting data | Yes | Open `examples/cost-calculator.html`. |
