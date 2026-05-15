@@ -1,0 +1,30 @@
+name: Tracking field request
+about: Request a provider, framework, or attribution field example
+labels: customer-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when the SDK is missing a field, provider example, or framework integration you need.
+  - type: input
+    id: field_or_integration
+    attributes:
+      label: Field or integration requested
+      placeholder: route, fallbackReason, teamId, Vercel AI SDK, LiteLLM, LangChain, CrewAI...
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      placeholder: This helps us attribute cost by customer plan, detect fallback spend, or route lower-risk tasks.
+    validations:
+      required: true
+  - type: textarea
+    id: example_payload
+    attributes:
+      label: Example payload or pseudo-code
+      description: Remove secrets, API keys, customer data, and private prompts.
+      render: ts
+    validations:
+      required: false
