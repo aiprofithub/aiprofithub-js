@@ -11,6 +11,8 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 | `openai-wrapper.md` | You want the guide for wrapping OpenAI calls with AIProfitHub tracking. |
 | `anthropic-wrapper.ts` | You already use Anthropic Claude messages and want automatic usage tracking. |
 | `anthropic-wrapper.md` | You want the guide for wrapping Claude calls with AIProfitHub tracking. |
+| `langchain-wrapper.ts` | You use LangChain-style chains or runnables and want usage tracking. |
+| `langchain-wrapper.md` | You want the guide for tracking LangChain workflows. |
 | `framework-integrations.md` | You want to copy tracking into Next.js or Express routes. |
 | `nextjs-route-handler.ts` | You use Next.js App Router route handlers. |
 | `express-route.ts` | You use Express or an Express-style Node API. |
@@ -24,7 +26,7 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 ## Decision path
 
 1. Install the SDK or test the REST API with cURL.
-2. Wrap existing OpenAI or Anthropic calls, or copy the Next.js/Express route example into your app.
+2. Wrap existing OpenAI, Anthropic, or LangChain calls, or copy the Next.js/Express route example into your app.
 3. Send one usage event.
 4. Add the GitHub Action cost check to catch future AI usage changes.
 5. Estimate spend with the calculator.

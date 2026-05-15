@@ -74,6 +74,8 @@ Start here if you want to test the SDK before connecting a full app:
 - `examples/openai-wrapper.md` — guide for adding usage tracking around OpenAI calls
 - `examples/anthropic-wrapper.ts` — wrapper for tracking Anthropic Claude messages
 - `examples/anthropic-wrapper.md` — guide for adding usage tracking around Claude calls
+- `examples/langchain-wrapper.ts` — wrapper for tracking LangChain-style runs and chains
+- `examples/langchain-wrapper.md` — guide for adding usage tracking around LangChain workflows
 - `examples/framework-integrations.md` — Next.js and Express app route integration guide
 - `examples/nextjs-route-handler.ts` — copyable Next.js route handler example
 - `examples/express-route.ts` — copyable Express route example
@@ -106,6 +108,7 @@ Start here if you want to test the SDK before connecting a full app:
 | Track AI calls from a JavaScript app | Yes | Install the SDK and send track events. |
 | Wrap OpenAI chat completions | Yes | Use `examples/openai-wrapper.md`. |
 | Wrap Anthropic Claude messages | Yes | Use `examples/anthropic-wrapper.md`. |
+| Track LangChain workflows | Yes | Use `examples/langchain-wrapper.md`. |
 | Copy tracking into a Next.js or Express route | Yes | Use `examples/framework-integrations.md`. |
 | Test API ingest without the SDK | Yes | Use `examples/rest-cookbook.md`. |
 | Add a PR reminder for AI cost risk | Yes | Use `examples/github-action-ai-cost-check.md`. |
