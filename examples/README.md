@@ -13,6 +13,7 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 | `anthropic-wrapper.md` | You want the guide for wrapping Claude calls with AIProfitHub tracking. |
 | `langchain-wrapper.ts` | You use LangChain-style chains or runnables and want usage tracking. |
 | `langchain-wrapper.md` | You want the guide for tracking LangChain workflows. |
+| `provider-router-decision-guide.md` | You want to choose provider/model routes by cost, risk, and margin. |
 | `framework-integrations.md` | You want to copy tracking into Next.js or Express routes. |
 | `nextjs-route-handler.ts` | You use Next.js App Router route handlers. |
 | `express-route.ts` | You use Express or an Express-style Node API. |
@@ -27,13 +28,14 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 
 1. Install the SDK or test the REST API with cURL.
 2. Wrap existing OpenAI, Anthropic, or LangChain calls, or copy the Next.js/Express route example into your app.
-3. Send one usage event.
-4. Add the GitHub Action cost check to catch future AI usage changes.
-5. Estimate spend with the calculator.
-6. Read the sample audit report.
-7. Review the agent playbooks.
-8. Add `customerId` and `feature` to identify cost drivers.
-9. Use the dashboard, audit, alerts, agents, and optimization workflow to reduce spend.
+3. Read the provider router guide to choose model routes by cost, risk, and margin.
+4. Send one usage event.
+5. Add the GitHub Action cost check to catch future AI usage changes.
+6. Estimate spend with the calculator.
+7. Read the sample audit report.
+8. Review the agent playbooks.
+9. Add `customerId` and `feature` to identify cost drivers.
+10. Use the dashboard, audit, alerts, agents, and optimization workflow to reduce spend.
 
 ## What to send
 
@@ -49,12 +51,16 @@ Recommended:
 - userId
 - customerId
 - feature
+- route
+- plan
+- fallbackReason
+- qualitySignal
 - costUsd
 - metadata
 
 ## Commercial next step
 
-If the examples work, the next question is not whether tracking works. It is where the money is leaking and which agent should act first.
+If the examples work, the next question is not whether tracking works. It is where the money is leaking and which route or agent should act first.
 
 - Get an AI Spend Audit: https://aiprofithub.ai/get-audit
 - Create an account: https://app.aiprofithub.ai/onboarding
