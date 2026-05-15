@@ -7,6 +7,7 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 | Example | Use it when |
 | --- | --- |
 | `basic-usage.ts` | You want the smallest possible event tracking example. |
+| `rest-cookbook.md` | You want to test the usage API with REST or cURL before installing an SDK. |
 | `cost-calculator.html` | You want to estimate monthly AI cost and margin risk before connecting data. |
 | `cost-calculator.md` | You want the decision guide for using the calculator. |
 | `sample-ai-spend-audit-report.md` | You want to see what a paid AI Spend Audit can return. |
@@ -14,7 +15,7 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 
 ## Decision path
 
-1. Install the SDK.
+1. Install the SDK or test the REST API with cURL.
 2. Send one usage event.
 3. Estimate spend with the calculator.
 4. Read the sample audit report.

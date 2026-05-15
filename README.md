@@ -70,6 +70,7 @@ Example event:
 Start here if you want to test the SDK before connecting a full app:
 
 - `examples/basic-usage.ts` — smallest working usage tracking example
+- `examples/rest-cookbook.md` — REST and cURL examples for non-JavaScript teams
 - `examples/cost-calculator.html` — browser-based AI spend and margin risk calculator
 - `examples/cost-calculator.md` — guide for turning estimated spend into an audit decision
 - `examples/sample-ai-spend-audit-report.md` — sample report showing what paid audits deliver
@@ -95,6 +96,7 @@ Start here if you want to test the SDK before connecting a full app:
 | You need to... | Use this SDK? | Next action |
 | --- | --- | --- |
 | Track AI calls from a JavaScript app | Yes | Install the SDK and send track events. |
+| Test API ingest without the SDK | Yes | Use `examples/rest-cookbook.md`. |
 | Estimate monthly AI spend before connecting data | Yes | Open `examples/cost-calculator.html`. |
 | See what an audit report looks like before buying | Yes | Read `examples/sample-ai-spend-audit-report.md`. |
 | See sample agent outputs before buying | Yes | Read `examples/agent-playbooks.md`. |
