@@ -65,6 +65,13 @@ Example event:
 - feature: support-chat
 - costUsd: 0.0042
 
+## Free examples
+
+Start here if you want to test the SDK before connecting a full app:
+
+- `examples/basic-usage.ts` — smallest working usage tracking example
+- `examples/README.md` — decision path from free tracking to paid AIProfitHub Cloud
+
 ## Required fields
 
 | Field | Required | Why it matters |
@@ -115,5 +122,3 @@ Do not commit credentials, environment files, backend source, billing logic, or 
 ## License
 
 MIT
-
-
