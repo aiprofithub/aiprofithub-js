@@ -25,6 +25,8 @@ flowchart LR
   D --> F[Budget alerts]
   D --> G[Audit report]
   D --> H[Optimization recommendations]
+```
+
 ## What this SDK does
 
 AIProfitHub helps teams see where AI spend is going before the bill becomes a surprise.
@@ -113,3 +115,5 @@ Do not commit credentials, environment files, backend source, billing logic, or 
 ## License
 
 MIT
+
+
