@@ -15,6 +15,7 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 | `langchain-wrapper.md` | You want the guide for tracking LangChain workflows. |
 | `provider-router-decision-guide.md` | You want to choose provider/model routes by cost, risk, and margin. |
 | `budget-alert-policy-template.md` | You want a budget threshold and alert policy before using live alerts. |
+| `customer-margin-risk-template.md` | You want to compare AI cost per customer against customer revenue. |
 | `framework-integrations.md` | You want to copy tracking into Next.js or Express routes. |
 | `nextjs-route-handler.ts` | You use Next.js App Router route handlers. |
 | `express-route.ts` | You use Express or an Express-style Node API. |
@@ -31,13 +32,14 @@ These examples help developers send AI usage data into AIProfitHub Cloud quickly
 2. Wrap existing OpenAI, Anthropic, or LangChain calls, or copy the Next.js/Express route example into your app.
 3. Read the provider router guide to choose model routes by cost, risk, and margin.
 4. Define alert thresholds with the budget alert policy template.
-5. Send one usage event.
-6. Add the GitHub Action cost check to catch future AI usage changes.
-7. Estimate spend with the calculator.
-8. Read the sample audit report.
-9. Review the agent playbooks.
-10. Add `customerId` and `feature` to identify cost drivers.
-11. Use the dashboard, audit, alerts, agents, and optimization workflow to reduce spend.
+5. Check customer-level margin risk with the customer margin template.
+6. Send one usage event.
+7. Add the GitHub Action cost check to catch future AI usage changes.
+8. Estimate spend with the calculator.
+9. Read the sample audit report.
+10. Review the agent playbooks.
+11. Add `customerId` and `feature` to identify cost drivers.
+12. Use the dashboard, audit, alerts, agents, and optimization workflow to reduce spend.
 
 ## What to send
 
@@ -62,7 +64,7 @@ Recommended:
 
 ## Commercial next step
 
-If the examples work, the next question is not whether tracking works. It is where the money is leaking, which alert should fire first, and which route or agent should act first.
+If the examples work, the next question is not whether tracking works. It is where the money is leaking, which customer is becoming margin-risky, which alert should fire first, and which route or agent should act first.
 
 - Get an AI Spend Audit: https://aiprofithub.ai/get-audit
 - Create an account: https://app.aiprofithub.ai/onboarding
