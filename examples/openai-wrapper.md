@@ -28,6 +28,12 @@ OPENAI_API_KEY=your-openai-key
 AIPROFITHUB_API_KEY=your-aiprofithub-key
 ```
 
+## Safety behavior
+
+The wrapper is safe to import. It exports `trackedChatCompletion()` and `runExample()`, but does not run an OpenAI request automatically at module load time.
+
+The OpenAI completion remains the primary result. If AIProfitHub tracking fails because of a temporary network issue, bad tracking key, or ingest error, the wrapper logs a warning and still returns the completed OpenAI response.
+
 ## Why this is useful
 
 Most teams start with direct OpenAI calls. That works until cost attribution becomes unclear.
