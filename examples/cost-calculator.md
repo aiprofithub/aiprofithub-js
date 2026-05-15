@@ -29,3 +29,4 @@ If the calculator shows medium or high risk, do not guess. Run a real AI Spend A
 - Get an AI Spend Audit: https://aiprofithub.ai/get-audit
 - Create an account: https://app.aiprofithub.ai/onboarding
 - Read docs: https://docs.aiprofithub.ai
+

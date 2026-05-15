@@ -1,4 +1,4 @@
-import { createClient } from "@aiprofithub/sdk";
+import { createClient } from "aiprofithub-sdk";
 import { NextResponse } from "next/server";
 
 const aip = createClient({
@@ -36,3 +36,4 @@ export async function POST(request: Request) {
 
   return NextResponse.json({ ok: true });
 }
+

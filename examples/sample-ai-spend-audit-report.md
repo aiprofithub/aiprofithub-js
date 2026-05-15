@@ -111,3 +111,4 @@ This sample report is free. A real AIProfitHub audit uses your actual usage data
 - Get an AI Spend Audit: https://aiprofithub.ai/get-audit
 - Create an account: https://app.aiprofithub.ai/onboarding
 - Read docs: https://docs.aiprofithub.ai
+

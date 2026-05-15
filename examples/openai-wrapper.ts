@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { createClient } from "@aiprofithub/sdk";
+import { createClient } from "aiprofithub-sdk";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -63,3 +63,4 @@ export async function runExample() {
 
 // This file exports a reusable wrapper. It does not run the demo automatically on import.
 // To test the example manually, call runExample() from your own script.
+

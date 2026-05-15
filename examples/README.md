@@ -69,3 +69,4 @@ If the examples work, the next question is not whether tracking works. It is whe
 - Get an AI Spend Audit: https://aiprofithub.ai/get-audit
 - Create an account: https://app.aiprofithub.ai/onboarding
 - Read docs: https://docs.aiprofithub.ai
+

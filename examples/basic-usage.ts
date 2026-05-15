@@ -1,4 +1,4 @@
-import { createClient } from "@aiprofithub/sdk";
+import { createClient } from "aiprofithub-sdk";
 
 const aip = createClient({
   apiKey: process.env.AIPROFITHUB_API_KEY ?? "replace-with-your-api-key",
@@ -20,3 +20,4 @@ await aip.track({
 });
 
 console.log("Usage event sent to AIProfitHub.");
+

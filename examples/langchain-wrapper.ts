@@ -1,4 +1,4 @@
-import { createClient } from "@aiprofithub/sdk";
+import { createClient } from "aiprofithub-sdk";
 
 type LangChainRunOptions<TInput, TOutput> = {
   provider: string;
@@ -76,3 +76,4 @@ export async function runExample() {
 
 // This file exports a reusable wrapper. It does not run the demo automatically on import.
 // To test the example manually, call runExample() from your own script.
+

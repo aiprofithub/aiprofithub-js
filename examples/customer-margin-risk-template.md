@@ -128,3 +128,4 @@ This template helps you reason about customer margin. AIProfitHub Cloud calculat
 - Get an AI Spend Audit: https://aiprofithub.ai/get-audit
 - Create an account: https://app.aiprofithub.ai/onboarding
 - Read docs: https://docs.aiprofithub.ai
+

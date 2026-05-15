@@ -42,12 +42,12 @@ Use this SDK to send usage events from your app into AIProfitHub Cloud:
 ## Install
 
 ```bash
-npm install @aiprofithub/sdk
+npm install aiprofithub-sdk
 ```
 
 ## Quick start
 
-Import `createClient` from `@aiprofithub/sdk`, then send usage events with provider, model, token counts, user, customer, and feature metadata.
+Import `createClient` from `aiprofithub-sdk`, then send usage events with provider, model, token counts, user, customer, and feature metadata.
 
 Required fields:
 
@@ -182,3 +182,4 @@ Do not commit credentials, environment files, backend source, billing logic, or 
 ## License
 
 MIT
+

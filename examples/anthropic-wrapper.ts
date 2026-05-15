@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { createClient } from "@aiprofithub/sdk";
+import { createClient } from "aiprofithub-sdk";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -64,3 +64,4 @@ export async function runExample() {
 
 // This file exports a reusable wrapper. It does not run the demo automatically on import.
 // To test the example manually, call runExample() from your own script.
+

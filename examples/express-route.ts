@@ -1,5 +1,5 @@
 import express from "express";
-import { createClient } from "@aiprofithub/sdk";
+import { createClient } from "aiprofithub-sdk";
 
 const app = express();
 
@@ -45,3 +45,4 @@ app.post("/api/ai/usage", async (request, response) => {
 app.listen(3000, () => {
   console.log("Example server listening on http://localhost:3000");
 });
+
