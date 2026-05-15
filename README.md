@@ -88,6 +88,21 @@ Start here if you want to test the SDK before connecting a full app:
 - `examples/agent-playbooks.md` — sample outputs from the 9 AIProfitHub product agents
 - `examples/README.md` — decision path from free tracking to paid AIProfitHub Cloud
 
+## Early users and promotion
+
+If you are using AI APIs in production, start here:
+
+- `docs/early-users.md` — early-user guide and AI Spend Audit path
+- `marketing/outreach-kit.md` — ready-to-post launch copy for LinkedIn, X, Dev.to, Hacker News, Reddit, and DM outreach
+- `marketing/lead-list-template.csv` — simple lead tracker for founder, CTO, and AI SaaS outreach
+
+Open an early-user issue if you want help deciding what to track:
+
+- provider and model
+- inputTokens and outputTokens
+- customerId, userId, teamId, feature, route, and plan
+- fallbackReason, qualitySignal, costUsd, and audit metadata
+
 ## Required fields
 
 | Field | Required | Why it matters |
