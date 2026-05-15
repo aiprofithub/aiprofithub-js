@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AIProfitHub AI Spend Calculator</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #020a06;
+        color: #eafff4;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: radial-gradient(circle at top, rgba(0, 240, 138, 0.18), transparent 35%), #020a06;
+      }
+      main {
+        width: min(1040px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0;
+      }
+      .hero, .card {
+        border: 1px solid rgba(0, 240, 138, 0.22);
+        border-radius: 24px;
+        background: rgba(6, 18, 12, 0.88);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+      }
+      .hero {
+        padding: 32px;
+        margin-bottom: 24px;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 5vw, 4rem);
+        letter-spacing: -0.06em;
+      }
+      p {
+        color: #b8d8c7;
+        line-height: 1.6;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .card {
+        padding: 24px;
+      }
+      label {
+        display: block;
+        margin: 14px 0 6px;
+        color: #d9ffee;
+        font-weight: 700;
+      }
+      input, select {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 240, 138, 0.25);
+        border-radius: 14px;
+        background: #07140d;
+        color: #eafff4;
+        padding: 12px 14px;
+        font: inherit;
+      }
+      .metric {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .metric strong {
+        color: #00f08a;
+      }
+      .risk {
+        margin-top: 18px;
+        padding: 16px;
+        border-radius: 16px;
+        background: rgba(0, 240, 138, 0.12);
+        border: 1px solid rgba(0, 240, 138, 0.26);
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 12px 16px;
+        border-radius: 999px;
+        background: #00f08a;
+        color: #021008;
+        text-decoration: none;
+        font-weight: 800;
+      }
+      .small {
+        font-size: 0.9rem;
+      }
+      @media (max-width: 820px) {
+        .grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <h1>AI Spend Calculator</h1>
+        <p>Estimate monthly AI cost, cost per customer, and margin risk before your next provider bill lands. This is a free calculator. AIProfitHub Cloud turns real usage data into dashboards, alerts, audit reports, and optimization actions.</p>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <label for="model">Model price preset</label>
+          <select id="model">
+            <option value="0.00015,0.0006">Low-cost model — $0.15 / $0.60 per 1M tokens</option>
+            <option value="0.005,0.015">Mid-tier model — $5 / $15 per 1M tokens</option>
+            <option value="0.03,0.06">Premium model — $30 / $60 per 1M tokens</option>
+          </select>
+
+          <label for="requests">Requests per day</label>
+          <input id="requests" type="number" value="5000" min="0" />
+
+          <label for="inputTokens">Average input tokens per request</label>
+          <input id="inputTokens" type="number" value="1200" min="0" />
+
+          <label for="outputTokens">Average output tokens per request</label>
+          <input id="outputTokens" type="number" value="300" min="0" />
+
+          <label for="customers">Active customers</label>
+          <input id="customers" type="number" value="100" min="1" />
+
+          <label for="revenue">Monthly revenue per customer</label>
+          <input id="revenue" type="number" value="49" min="0" />
+        </div>
+
+        <div class="card">
+          <div class="metric"><span>Estimated monthly AI cost</span><strong id="monthlyCost">$0</strong></div>
+          <div class="metric"><span>Cost per customer</span><strong id="costPerCustomer">$0</strong></div>
+          <div class="metric"><span>Monthly revenue</span><strong id="monthlyRevenue">$0</strong></div>
+          <div class="metric"><span>AI cost as revenue %</span><strong id="costPercent">0%</strong></div>
+          <div class="risk">
+            <strong id="riskLabel">Risk: Low</strong>
+            <p id="riskText" class="small">Your AI cost looks manageable. Keep tracking by customer and feature before usage grows.</p>
+          </div>
+          <a class="cta" href="https://aiprofithub.ai/get-audit">Get a full AI Spend Audit</a>
+          <p class="small">Next step: connect real usage with the AIProfitHub SDK, then use Cloud to find customer, feature, and model-level cost leaks.</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const ids = ["model", "requests", "inputTokens", "outputTokens", "customers", "revenue"];
+      const money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+
+      function n(id) {
+        return Number(document.getElementById(id).value || 0);
+      }
+
+      function calculate() {
+        const [inputPrice, outputPrice] = document.getElementById("model").value.split(",").map(Number);
+        const monthlyInputTokens = n("requests") * n("inputTokens") * 30;
+        const monthlyOutputTokens = n("requests") * n("outputTokens") * 30;
+        const monthlyCost = (monthlyInputTokens / 1_000_000) * inputPrice + (monthlyOutputTokens / 1_000_000) * outputPrice;
+        const monthlyRevenue = n("customers") * n("revenue");
+        const costPerCustomer = monthlyCost / Math.max(n("customers"), 1);
+        const costPercent = monthlyRevenue > 0 ? (monthlyCost / monthlyRevenue) * 100 : 0;
+
+        document.getElementById("monthlyCost").textContent = money.format(monthlyCost);
+        document.getElementById("costPerCustomer").textContent = money.format(costPerCustomer);
+        document.getElementById("monthlyRevenue").textContent = money.format(monthlyRevenue);
+        document.getElementById("costPercent").textContent = `${costPercent.toFixed(1)}%`;
+
+        const label = document.getElementById("riskLabel");
+        const text = document.getElementById("riskText");
+        if (costPercent >= 25) {
+          label.textContent = "Risk: High";
+          text.textContent = "AI cost is eating a large share of revenue. You should audit model routing, feature usage, and customer-level cost immediately.";
+        } else if (costPercent >= 10) {
+          label.textContent = "Risk: Medium";
+          text.textContent = "AI cost is meaningful. Track usage by customer and feature before margin gets compressed.";
+        } else {
+          label.textContent = "Risk: Low";
+          text.textContent = "Your AI cost looks manageable. Keep tracking by customer and feature before usage grows.";
+        }
+      }
+
+      ids.forEach((id) => document.getElementById(id).addEventListener("input", calculate));
+      calculate();
+    </script>
+  </body>
+</html>
