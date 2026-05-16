@@ -75,7 +75,7 @@ console.log("- Attach userId, customerId, and feature where possible.");
 console.log("- Add budget alerts before usage scales.");
 console.log("- Track customer margin risk, not only provider invoice totals.");
 console.log("");
-console.log("Free SDK: https://github.com/aiprofithub/aiprofithub-js");
+console.log("Production SDK: https://github.com/aiprofithub/aiprofithub-js");
 
 const highRisk = findings.some((finding) => finding.attributionScore < 2);
 if (failOnRisk && highRisk) {
