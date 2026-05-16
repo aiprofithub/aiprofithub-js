@@ -1,0 +1,16 @@
+name: AI Cost Toolkit Smoke
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  ai-cost-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./toolkit/ai-cost-check-action
+        with:
+          monthly_budget_usd: "500"
+          fail_on_risk: "false"
+          paths: "."

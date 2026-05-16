@@ -1,5 +1,3 @@
-import { NextResponse } from "next/server";
-
 type Tracker = {
   track: (event: {
     provider: string;
@@ -13,6 +11,15 @@ type Tracker = {
   }) => Promise<void> | void;
 };
 
+type TrackedHandlerResult = {
+  response: Response;
+  inputTokens?: number;
+  outputTokens?: number;
+  userId?: string;
+  customerId?: string;
+  metadata?: Record<string, unknown>;
+};
+
 export function withAIUsageTracking<TBody>({
   tracker,
   provider,
@@ -24,16 +31,9 @@ export function withAIUsageTracking<TBody>({
   provider: string;
   model: string;
   feature: string;
-  handler: (body: TBody) => Promise<{
-    response: Response | NextResponse;
-    inputTokens?: number;
-    outputTokens?: number;
-    userId?: string;
-    customerId?: string;
-    metadata?: Record<string, unknown>;
-  }>;
+  handler: (body: TBody) => Promise<TrackedHandlerResult>;
 }) {
-  return async function POST(request: Request) {
+  return async function POST(request: Request): Promise<Response> {
     const body = (await request.json()) as TBody;
     const result = await handler(body);
 
@@ -56,6 +56,7 @@ export function withAIUsageTracking<TBody>({
 }
 
 // Example:
+//
 // export const POST = withAIUsageTracking({
 //   tracker: client,
 //   provider: "openai",
@@ -63,8 +64,9 @@ export function withAIUsageTracking<TBody>({
 //   feature: "support-chat",
 //   async handler(body) {
 //     const completion = await openai.chat.completions.create(...);
+//
 //     return {
-//       response: NextResponse.json({ ok: true }),
+//       response: Response.json({ ok: true }),
 //       inputTokens: completion.usage?.prompt_tokens,
 //       outputTokens: completion.usage?.completion_tokens,
 //       customerId: body.customerId,
