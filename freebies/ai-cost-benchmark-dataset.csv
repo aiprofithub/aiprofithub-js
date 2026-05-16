@@ -1,0 +1,11 @@
+eventId,provider,model,customerId,feature,inputTokens,outputTokens,costUsd
+evt_001,openai,gpt-4o-mini,customer_001,support-chat,1200,280,0.000348
+evt_002,openai,gpt-4o-mini,customer_002,support-chat,950,310,0.0003285
+evt_003,anthropic,claude-3-5-sonnet,customer_003,contract-review,4200,900,0.0261
+evt_004,openai,gpt-4o,customer_003,reasoning-agent,3800,1200,0.037
+evt_005,openai,gpt-4o-mini,customer_004,email-draft,700,250,0.000255
+evt_006,anthropic,claude-3-haiku,customer_002,classification,500,80,0.000225
+evt_007,openai,gpt-4o-mini,customer_001,summary,1800,360,0.000486
+evt_008,openai,gpt-4o,customer_005,sales-agent,2500,900,0.026
+evt_009,groq,llama-3.1-70b,customer_004,fast-chat,1000,300,0.0002
+evt_010,mistral,mistral-small,customer_006,extract,1600,200,0.0004
