@@ -77,6 +77,26 @@ Example event:
 | Wrap existing OpenAI calls | `examples/openai-wrapper.md` |
 | Wrap Anthropic Claude calls | `examples/anthropic-wrapper.md` |
 | Track LangChain workflows | `examples/langchain-wrapper.md` |
+| Catch AI cost risk in pull requests | `freebies/ai-cost-check-action/` |
+| Estimate monthly AI spend from the terminal | `freebies/ai-cost-calculator-cli/` |
+| Generate a lightweight audit report from usage CSV | `freebies/ai-spend-audit-report-generator.mjs` |
+
+## Freebie pack
+
+Free tools and templates for builders who want AI cost visibility before they wire up a full dashboard.
+
+| Asset | Use it when |
+| --- | --- |
+| `freebies/ai-cost-check-action/` | You want a GitHub Action that flags AI cost risk in pull requests. |
+| `freebies/ai-cost-calculator-cli/` | You want a CLI-style monthly AI spend estimator. |
+| `freebies/langchain-cost-callback.ts` | You use LangChain and want a starter cost attribution callback. |
+| `freebies/nextjs-ai-usage-middleware.ts` | You use Next.js route handlers and want a reusable tracking wrapper. |
+| `freebies/openai-cost-wrapper.ts` | You use the OpenAI SDK and want a drop-in attribution wrapper. |
+| `freebies/ai-spend-audit-report-generator.mjs` | You want to generate a Markdown audit report from usage rows. |
+| `freebies/customer-margin-risk-template.md` | You want to compare AI cost against customer revenue. |
+| `freebies/llm-provider-router-template.md` | You want starter routing rules for cost, latency, and quality. |
+| `freebies/budget-alert-policy-pack.yaml` | You want alert policies for spend, feature spikes, and margin risk. |
+| `freebies/ai-cost-benchmark-dataset.csv` | You want sample data for testing dashboards and reports. |
 
 ## Free assets by use case
 
@@ -103,6 +123,8 @@ Example event:
 | `examples/cost-calculator.html` | You want a browser-based AI spend and margin risk calculator. |
 | `examples/cost-calculator.md` | You want the decision guide for using the calculator. |
 | `examples/customer-margin-risk-template.md` | You want to compare AI cost per customer against customer revenue. |
+| `freebies/ai-cost-calculator-cli/ai-cost-calculator.mjs` | You want a terminal-based estimator. |
+| `freebies/customer-margin-risk-template.md` | You want a customer margin table template. |
 
 ### 3. Control budgets, alerts, and routing
 
@@ -111,6 +133,9 @@ Example event:
 | `examples/provider-router-decision-guide.md` | You want to choose provider/model routes by cost, risk, and margin. |
 | `examples/budget-alert-policy-template.md` | You want budget thresholds, anomaly alerts, and route guardrails. |
 | `examples/github-action-ai-cost-check.md` | You want a CI reminder when pull requests add AI cost risk. |
+| `freebies/ai-cost-check-action/` | You want an action-style PR risk scanner. |
+| `freebies/budget-alert-policy-pack.yaml` | You want reusable starter alert policies. |
+| `freebies/llm-provider-router-template.md` | You want a model-routing decision table. |
 
 ### 4. Evaluate AIProfitHub before buying
 
@@ -119,6 +144,8 @@ Example event:
 | `examples/sample-ai-spend-audit-report.md` | You want to see what a paid AI Spend Audit can return. |
 | `examples/agent-playbooks.md` | You want sample outputs from the 9 AIProfitHub product agents. |
 | `examples/README.md` | You want the full decision path from free tracking to paid Cloud. |
+| `freebies/ai-spend-audit-report-generator.mjs` | You want to generate a local audit report from CSV. |
+| `freebies/ai-cost-benchmark-dataset.csv` | You want sample rows to test the report generator. |
 
 ## Required fields
 
@@ -147,9 +174,10 @@ Example event:
 | Check customer margin risk | Yes | Use `examples/customer-margin-risk-template.md`. |
 | Copy tracking into a Next.js or Express route | Yes | Use `examples/framework-integrations.md`. |
 | Test API ingest without the SDK | Yes | Use `examples/rest-cookbook.md`. |
-| Add a PR reminder for AI cost risk | Yes | Use `examples/github-action-ai-cost-check.md`. |
-| Estimate monthly AI spend before connecting data | Yes | Open `examples/cost-calculator.html`. |
+| Add a PR reminder for AI cost risk | Yes | Use `examples/github-action-ai-cost-check.md` or `freebies/ai-cost-check-action/`. |
+| Estimate monthly AI spend before connecting data | Yes | Open `examples/cost-calculator.html` or run `freebies/ai-cost-calculator-cli/ai-cost-calculator.mjs`. |
 | See what an audit report looks like before buying | Yes | Read `examples/sample-ai-spend-audit-report.md`. |
+| Generate an audit report from sample usage CSV | Yes | Use `freebies/ai-spend-audit-report-generator.mjs`. |
 | See sample agent outputs before buying | Yes | Read `examples/agent-playbooks.md`. |
 | Find which customer or feature burns the most AI budget | Yes | Send customerId and feature with each event. |
 | Get a one-time cost leak report | Yes | Start with an AI Spend Audit. |
