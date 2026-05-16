@@ -1,0 +1,28 @@
+name: AI Cost Check
+
+description: Catch AI cost risk in pull requests before it ships.
+
+inputs:
+  monthly_budget_usd:
+    description: Monthly AI budget in USD used for advisory copy.
+    required: false
+    default: "500"
+  fail_on_risk:
+    description: Set to true to fail when AI provider calls are detected without attribution hints.
+    required: false
+    default: "false"
+  paths:
+    description: Space-separated paths to scan.
+    required: false
+    default: "."
+
+runs:
+  using: composite
+  steps:
+    - name: Run AI cost risk scan
+      shell: bash
+      run: |
+        node "$GITHUB_ACTION_PATH/check-ai-cost-risk.mjs" \
+          --budget "${{ inputs.monthly_budget_usd }}" \
+          --fail-on-risk "${{ inputs.fail_on_risk }}" \
+          --paths "${{ inputs.paths }}"
