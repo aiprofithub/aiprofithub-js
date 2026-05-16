@@ -1,0 +1,63 @@
+version: 1
+name: ai-budget-alert-policy-pack
+
+policies:
+  - id: daily-spend-warning
+    description: Warn when daily AI spend crosses 70 percent of expected daily budget.
+    window: 1d
+    metric: ai_cost_usd
+    threshold_type: percent_of_budget
+    threshold: 70
+    severity: warning
+    notify:
+      - slack
+      - email
+
+  - id: daily-spend-critical
+    description: Alert when daily AI spend crosses 90 percent of expected daily budget.
+    window: 1d
+    metric: ai_cost_usd
+    threshold_type: percent_of_budget
+    threshold: 90
+    severity: critical
+    notify:
+      - slack
+      - email
+
+  - id: customer-margin-risk
+    description: Alert when estimated AI cost for a customer exceeds 25 percent of revenue.
+    window: 30d
+    metric: ai_cost_to_revenue_ratio
+    threshold_type: greater_than
+    threshold: 0.25
+    severity: high
+    group_by:
+      - customerId
+
+  - id: feature-cost-spike
+    description: Alert when a product feature cost doubles compared with the previous period.
+    window: 24h
+    metric: ai_cost_usd
+    threshold_type: relative_increase
+    threshold: 2
+    severity: medium
+    group_by:
+      - feature
+
+  - id: premium-model-overuse
+    description: Alert when premium model cost exceeds 40 percent of total AI spend.
+    window: 7d
+    metric: ai_cost_usd
+    threshold_type: share_of_total
+    threshold: 0.4
+    severity: medium
+    group_by:
+      - model
+
+required_event_fields:
+  - provider
+  - model
+  - inputTokens
+  - outputTokens
+  - customerId
+  - feature
