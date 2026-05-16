@@ -14,6 +14,32 @@ Track AI model usage, token volume, customer attribution, feature attribution, a
   <a href="https://docs.aiprofithub.ai"><strong>Read the docs</strong></a>
 </p>
 
+## Who this is for
+
+This SDK is for builders who already have, or expect to have, real AI API usage inside a product.
+
+Use it if you are building:
+
+- an AI SaaS product with usage-heavy features
+- a chatbot, copilot, support assistant, or agent workflow
+- a developer tool that calls LLM providers in the background
+- an internal AI app where finance still needs cost attribution
+- a product with fixed-price plans but variable AI usage
+- a team dashboard that needs cost by customer, feature, user, provider, or model
+
+It is especially useful when the provider bill is visible, but the business question is still unanswered: which customer, feature, model, or workflow is quietly eating margin?
+
+## When this is useful
+
+| Situation | Why it matters |
+| --- | --- |
+| Two customers pay the same plan but use very different token volume | Customer-level margin can drift without showing up in provider dashboards. |
+| AI features run through queues, workers, or agents | Cost can hide outside the main request path. |
+| Multiple providers or models are used | Spend gets fragmented across billing dashboards. |
+| Product teams ship new AI features quickly | Feature-level tags make cost review possible later. |
+| Finance asks for a spend report | Usage events provide the raw attribution data. |
+| You want budget alerts or routing decisions | Clean event tags are the control-plane foundation. |
+
 ## Visual flow
 
 ```mermaid
@@ -58,20 +84,33 @@ Required fields:
 
 Example event:
 
-- provider: openai
-- model: gpt-4o-mini
-- inputTokens: 1200
-- outputTokens: 300
-- userId: user_123
-- customerId: customer_456
-- feature: support-chat
-- costUsd: 0.0042
+```ts
+import { createClient } from "aiprofithub-sdk";
+
+const aiProfitHub = createClient({
+  apiKey: process.env.AIPROFITHUB_API_KEY,
+});
+
+await aiProfitHub.trackUsage({
+  provider: "openai",
+  model: "gpt-4o-mini",
+  inputTokens: 1200,
+  outputTokens: 300,
+  userId: "user_123",
+  customerId: "customer_456",
+  feature: "support-chat",
+  costUsd: 0.0042,
+});
+```
+
+More copy-paste examples: `examples/copy-paste-recipes.md`.
 
 ## Start here
 
 | Goal | Start with |
 | --- | --- |
 | Send one SDK event | `examples/basic-usage.ts` |
+| Copy practical snippets | `examples/copy-paste-recipes.md` |
 | Test API ingest without SDK install | `examples/rest-cookbook.md` |
 | Copy tracking into an app route | `examples/framework-integrations.md` |
 | Wrap existing OpenAI calls | `examples/openai-wrapper.md` |
@@ -105,6 +144,7 @@ Free tools and templates for builders who want AI cost visibility before they wi
 | Asset | Use it when |
 | --- | --- |
 | `examples/basic-usage.ts` | You want the smallest working SDK example. |
+| `examples/copy-paste-recipes.md` | You want copy-paste tracking snippets for common AI cost cases. |
 | `examples/rest-cookbook.md` | You want REST and cURL examples for non-JavaScript teams. |
 | `examples/framework-integrations.md` | You want a Next.js and Express route integration guide. |
 | `examples/nextjs-route-handler.ts` | You use Next.js App Router route handlers. |
@@ -184,24 +224,13 @@ Free tools and templates for builders who want AI cost visibility before they wi
 | Replace your generic log stack | No | Use AIProfitHub for AI cost intelligence, not generic logs. |
 | Open source your private SaaS backend | No | Keep backend, billing, and dashboard code private. |
 
-## When users should buy AIProfitHub Cloud
+## Community questions
 
-The SDK is free. The paid value is the control plane around the data.
+If you are working through AI cost tracking, open an issue using one of the templates:
 
-Buy AIProfitHub when you need to:
-
-- stop surprise AI bills
-- attribute AI cost by customer or feature
-- detect abnormal model usage
-- prepare finance-ready AI spend reports
-- reduce AI cost without guessing
-- protect product margin as usage grows
-
-## Community feedback
-
-Building an AI SaaS, agent, chatbot, internal copilot, or LangChain app?
-
-Open an **AI Spend Audit Request** issue if you want practical feedback on how to track AI cost by provider, model, user, customer, feature, and margin risk.
+- **SDK integration help**: ask where to place tracking in a framework, route, worker, or provider wrapper.
+- **AI margin question**: ask how to think about customer margin, feature profitability, plan limits, or usage guardrails.
+- **AI cost tracking question**: ask about provider/model tags, feature attribution, budget alerts, or audit report structure.
 
 Good questions to ask:
 
@@ -211,11 +240,17 @@ Good questions to ask:
 - What budget alerts should I add before usage scales?
 - Which model/provider routing rules should I test first?
 
-Start here: https://github.com/aiprofithub/aiprofithub-js/issues/new?template=ai-spend-audit-request.md
+## Discussion starter
+
+Want to compare notes with other builders? Start with this question:
+
+> How are you tracking AI API spend today: provider dashboard, spreadsheet, internal dashboard, logs, billing export, or a dedicated tool?
+
+If GitHub Discussions is enabled for this repository, pin this as the first discussion topic: **How do you track AI API spend today?**
 
 ## Safety notes
 
-Do not commit credentials, environment files, backend source, billing logic, or private dashboard code into public repositories.
+Do not commit credentials, environment files, backend source, billing logic, customer data, raw prompts, provider API keys, or private dashboard code into public repositories.
 
 ## Commercial path
 
@@ -226,4 +261,3 @@ Do not commit credentials, environment files, backend source, billing logic, or 
 ## License
 
 MIT
-
