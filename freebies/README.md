@@ -1,6 +1,6 @@
-# AIProfitHub Freebie Pack
+# AIProfitHub AI Cost Toolkit
 
-Free tools and templates for builders shipping AI features with OpenAI, Anthropic, LangChain, and other LLM providers.
+Tools and templates for builders shipping AI features with OpenAI, Anthropic, LangChain, and other LLM providers.
 
 These assets are designed to help teams catch AI cost risk before it becomes a surprise bill.
 
@@ -14,8 +14,8 @@ These assets are designed to help teams catch AI cost risk before it becomes a s
 | `nextjs-ai-usage-middleware.ts` | You use Next.js route handlers and want a reusable tracking wrapper. |
 | `openai-cost-wrapper.ts` | You use the OpenAI SDK and want a drop-in attribution wrapper. |
 | `ai-spend-audit-report-generator.mjs` | You want to generate a lightweight AI spend audit report from usage rows. |
-| `customer-margin-risk-template.csv` | You want to compare customer revenue against estimated AI cost. |
-| `llm-provider-router-template.ts` | You want simple routing rules for cost, latency, and risk. |
+| `customer-margin-risk-template.md` | You want to compare customer revenue against estimated AI cost. |
+| `llm-provider-router-template.md` | You want simple routing rules for cost, latency, and risk. |
 | `budget-alert-policy-pack.yaml` | You want starter thresholds for AI budget alerts. |
 | `ai-cost-benchmark-dataset.csv` | You want sample data for testing dashboards or calculators. |
 
