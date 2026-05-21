@@ -6,3 +6,8 @@ pnpm-debug.log*
 .DS_Store
 .env
 .env.*
+.env.local
+.sales/
+data/private/*
+!data/private/leads.example.csv
+*.leadpack.local.csv
