@@ -1,4 +1,0 @@
-company,website,category,trigger,contact_email,linkedin_url,source_url,priority,status,notes
-Example Agent Studio,https://example-agent-studio.invalid,AI agents,Launched usage-based autonomous workflow credits,hello@example-agent-studio.invalid,https://www.linkedin.com/company/example-agent-studio,https://example-agent-studio.invalid/blog/workflow-credits,4,new,Fake example row only
-Northstar Eval Labs,https://northstar-eval-labs.invalid,LLM observability,Announced eval dashboards for model quality and routing,team@northstar-eval-labs.invalid,https://www.linkedin.com/company/northstar-eval-labs,https://northstar-eval-labs.invalid/launch/evals,5,new,Fake example row only
-Acme Support Bot,https://acme-support-bot.invalid,customer-support AI,Published AI support automation case study,contact@acme-support-bot.invalid,https://www.linkedin.com/company/acme-support-bot,https://acme-support-bot.invalid/customers/support-ai,3,new,Fake example row only

@@ -7,7 +7,3 @@ pnpm-debug.log*
 .env
 .env.*
 .env.local
-.sales/
-data/private/*
-!data/private/leads.example.csv
-*.leadpack.local.csv
